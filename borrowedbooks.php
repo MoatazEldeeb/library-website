@@ -16,6 +16,19 @@
         $_SESSION['isLoggedin']= true;
     }
 
+    if(isset($_POST['return']))
+    {
+        $bookID= $_POST['id_to_return'];
+
+        $sql = "UPDATE books SET borrowed_by= '0'WHERE book_id = $bookID";
+
+        if(mysqli_query($conn,$sql)){
+            header('Location: home.php');
+        }else{
+            echo 'query error: '. mysqli_error($conn);
+        }
+
+    }
     
     mysqli_free_result($result);
     mysqli_close($conn);
@@ -33,30 +46,18 @@
                         <h4><?php echo $book['author'];?></h4>
                         <p><?php echo $book['category'];?></p>
 
-                        <p id="borrow-el">Borrow Date: <?php echo $book['borrowDate'];?></p>
-                        <p id= "return-el">Return Date: <?php echo $book['returnDate'];?></p>
+                        <p class="borrow-els">Borrow Date: <?php echo $book['borrowDate'];?></p>
+                        <p class= "return-els">Return Date: <?php echo $book['returnDate'];?></p>
                         <p><?php echo $book['description'];?></p>
-                        
+                        <form action="borrowedbooks.php?id=<?php echo $userID ?>" method="POST">
+                            <input type="hidden" name="id_to_return" value="<?php echo $book['book_id'];?>">
+                            <input type="submit" name= "return" value="Return"> 
+                        </form>
                     </div>
                     
             <?php endforeach;?>
-            <script type="text/javascript">
-                        
-                const borrowEl = document.getElementById("borrow-el")
-                const returnEl = document.getElementById("return-el")
 
-                let borrowDate = borrowEl.innerText 
-                let returnDate = returnEl.innerText
-
-                borrowDate = borrowDate.split(/(:+)/)[2]
-                returnDate = returnDate.split(/(:+)/)[2]
-
-                borrowDate = borrowDate.slice(0,5 ) + "-"+ borrowDate.slice(5, 7) +"-"+borrowDate.slice(7, 9)
-                returnDate = returnDate.slice(0,5 ) + "-"+ returnDate.slice(5, 7) +"-"+returnDate.slice(7, 9)
-
-                borrowEl.innerText = "Borrow Date: " + borrowDate
-                returnEl.innerText = "Return Date: " + returnDate
-            </script>
+            <script type="text/javascript" src="dateformat.js"></script>
             
         </div>
             

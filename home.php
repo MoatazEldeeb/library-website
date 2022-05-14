@@ -83,7 +83,11 @@
     </ul>
     
     <?php else: echo 'Hello Guest';?>
-
+    <ul class="user-options">
+        <li id="available-books-el" class="user-book">
+            <a href="allbooks.php" >Available books</a>
+        </li>
+    </ul>
 
     <?php endif;?>
     <?php include 'templates/footer.html';?>
