@@ -65,6 +65,9 @@
             <li class="user-book">
                 <a href="addBook.php" >Add Book</a>
             </li>
+            <li class="user-book">
+                <a href="manageMembers.php" >Manage Members</a>
+            </li>
         </ul>
         
         
