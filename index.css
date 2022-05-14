@@ -1,0 +1,116 @@
+body{
+    background-color: beige;
+    margin: 0px;
+    font-family: sans-serif;
+}
+.nav-head{
+    
+    background-color: darkblue;
+}
+
+.container{
+    text-align: center;
+}
+.book{
+    margin: 5px;
+    text-align: center;
+    border: 5;
+}
+.log-in{
+    position: absolute;
+    right: 30px;
+    padding: 10px;
+}
+.login-container{
+    background-color: deepskyblue;
+    margin: 20px;
+    padding: 10px;
+    border-style: solid;
+    border-color: deepskyblue;
+    width: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 20px 20px 10px grey;
+    
+}
+::placeholder {
+    text-align: center;
+}
+input{
+    background-color: aliceblue;
+    border-color: transparent;
+    margin-bottom: 5px;
+    padding: 3px;
+    width: 90%;
+}
+input:focus {
+    background-color: rgb(238, 231, 231);
+}
+.icon{
+    text-align: left ;
+    width: 40px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+.logo{
+    width: 35px !important;
+    padding-bottom: 5px !important;
+}
+.user-options{
+    list-style-type: none;
+    margin: 40px 20px;
+    border-style: solid;
+    border-color: beige;
+    background-color: beige;
+    padding-bottom: 10px;
+}
+
+.user-book{
+    border-style: solid;
+    background-color: deepskyblue;
+
+    padding-bottom: 10px;
+    text-align: center;
+    margin: 10px;
+}
+ul a {
+    padding-bottom: 100px !important;
+    color: black;
+    padding-bottom: 100px !important;
+    margin-bottom: 200px;
+    text-decoration: none;
+}
+a{
+    color: white;
+    padding: 5px;
+}
+.books-container{
+    background-color: darkslategray;
+    border-color: darkslategray;
+    color: white;
+    padding-top: 10px;
+    text-align: center;
+    border-style: solid;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.book-card{
+    padding-top: 10px;
+    border-style: solid;
+    border-color: blueviolet;
+    background-color: darkslategray;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+}
