@@ -25,13 +25,13 @@
         $borrowDate = date("Y-m-d");
         $returnDate = date('Y-m-d', strtotime('+7 days'));
         
-        $borrowDate = explode('-', $borrowDate);
-        $borrowDate = implode("", $borrowDate);
+        // $borrowDate = explode('-', $borrowDate);
+        // $borrowDate = implode("", $borrowDate);
 
-        $returnDate = explode('-', $returnDate);
-        $returnDate = implode("", $returnDate);
+        // $returnDate = explode('-', $returnDate);
+        // $returnDate = implode("", $returnDate);
 
-        $sql = "UPDATE books SET borrowed_by=$userID, borrowDate=$borrowDate, returnDate= $returnDate  WHERE book_id= $id_to_borrow ";
+        $sql = "UPDATE books SET borrowed_by='$userID', borrowDate='$borrowDate', returnDate= '$returnDate'  WHERE book_id= $id_to_borrow ";
 
         if(mysqli_query($conn,$sql)){
             header('Location: home.php');
@@ -117,7 +117,6 @@
                 <?php endif;?>
             <?php endforeach;?>
         </div>
-        <script type="text/javascript" src="dateformat.js"></script>
             
     </div>
 

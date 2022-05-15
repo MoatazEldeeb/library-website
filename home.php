@@ -77,12 +77,16 @@
         <?php echo 'Hello '. $member['firstName']; ?>
     <!-- User Page -->
     <ul class="user-options">
+        <li class="user-book">
+            <a href="memberDetails.php?id=<?php echo $member['id'];?>" >My Details</a>
+        </li>
         <li id="mybooks-el" class="user-book" >
             <a href="borrowedbooks.php?id=<?php echo $member['id'];?>">My books</a>
         </li>
         <li id="available-books-el" class="user-book">
             <a href="allbooks.php?id=<?php echo $member['id'];?>" >Available books</a>
         </li>
+        
     </ul>
     
     <?php else: echo 'Hello Guest';?>

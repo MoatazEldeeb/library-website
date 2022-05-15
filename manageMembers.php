@@ -35,7 +35,7 @@
         
             <?php foreach($members as $member): ?>
                 
-                <p>Name: <?php echo $member['firstName'] . $member['lastName'] ;?></p>
+                <p>Name: <?php echo $member['firstName'] ." ". $member['lastName'] ;?></p>
                 
                 <p>Email: <?php echo $member['email'];?></p>
                 <?php
@@ -56,10 +56,8 @@
                         <li><?php echo $book['title'];?></li>
                     <?php endforeach;?>
                 </ul>
-                <form action="manageMembers.php" method="POST">
-                    <input type="hidden" name="id_to_view" value="<?php echo $member['id'];?>">
-                    <input type="submit" name= "view" value="Edit"> 
-                </form>
+                <hr>
+                
 
             <?php endforeach;?>
         </div>

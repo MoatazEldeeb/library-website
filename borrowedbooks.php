@@ -57,7 +57,6 @@
                     
             <?php endforeach;?>
 
-            <script type="text/javascript" src="dateformat.js"></script>
             
         </div>
             
