@@ -5,8 +5,10 @@
     $pass = "";
     $isAdmin = 0;
     $id = 0;
-
+    // session_destroy();
     session_start();
+
+    unset($_SESSION['id']);
 
     $errors = array('email'=>'','password'=> '', 'validation'=>'');
 
@@ -20,15 +22,6 @@
 
     mysqli_close($conn);
 
-    session_destroy();
-    // if(isset($_GET['ili'])){
-    //     echo 'ili is set';
-    //     unset($_SESSION['id']);
-    //     unset($_SESSION['isLoggedin']);
-    //     session_abort();
-    // }else{
-
-    // }
 
 
     if(isset($_POST['submit'])){

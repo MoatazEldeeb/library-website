@@ -1,8 +1,7 @@
 <?php
     
-
-    if(isset($_SESSION['isLoggedin'])){
-        $isLogged = $_SESSION['isLoggedin'];
+    if(isset($_SESSION['id'])){
+        $isLogged = $_SESSION['id'];
     }else{
         $isLogged =false;
     }
@@ -22,7 +21,7 @@
             <a href="home.php"><img class= "icon" src="images/home.png" alt="home not available"></a>
             
             
-            <a href="login.php?ili=<?php echo $isLogged?>" class="log-in" >
+            <a href="login.php" class="log-in" >
                 <?php if($isLogged ):?>
                     <?php echo "Logout";?>
                 <?php else: echo "Login";?>

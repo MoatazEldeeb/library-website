@@ -1,6 +1,12 @@
 <?php
     include "config/db_connect.php";
 
+    session_start();
+    if(isset($_SESSION['isLoggedin'])){
+        $isLoggedin = true;
+        $_SESSION['isLoggedin']= true;
+    }
+
     if(isset($_GET['id'])){
 
         $memberId = $_GET['id'];

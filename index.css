@@ -86,6 +86,7 @@ a{
     color: white;
     padding: 5px;
 }
+
 .books-container{
     background-color: grey;
     border-color: grey;
@@ -119,3 +120,18 @@ footer{
     list-style-type: none;
 }
 
+.search-bar{
+    height: 40px;
+    text-align: center;
+    margin: 20px;
+    
+}
+#textSearch{
+    width: 200px;
+    
+}
+#search-icon{
+    display: inline;
+    width: 15px;
+    height: 15px;
+}

@@ -11,10 +11,6 @@
 
     $books = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    if(isset($_SESSION['isLoggedin'])){
-        $isLoggedin = true;
-        $_SESSION['isLoggedin']= true;
-    }
 
     if(isset($_POST['return']))
     {

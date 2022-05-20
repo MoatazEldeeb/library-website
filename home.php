@@ -6,7 +6,7 @@
     $member = ['firstName'=>'Guest','lastName'=>'','email'=>'','password'=>'','isAdmin'=> 0];
 
     
-    $isLoggedin =false;
+    $isLoggedin = isset($_SESSION['id']);
     if(isset($_SESSION['id'])){
         $isLoggedin = true;
         $_SESSION['isLoggedin']= true;
