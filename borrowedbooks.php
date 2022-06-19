@@ -34,6 +34,7 @@
 <html>
     <?php include 'header.php'; ?>
     <div>
+        <div id="return-book" >Please return the book that is due.</div>
         <div class="books-container">
             <?php foreach($books as $book): ?>
                     <div class="book-card">
@@ -58,6 +59,52 @@
             
             
     </div>
+    
+    <script>
+        let returnBookDiv = document.getElementById("return-book");
+        var books = <?php echo json_encode($books);?>;
+        
+        
+
+        for(let i =0;i<books.length;i++)
+        {
+            if(datePassed(books[i]["returnDate"])=== true){
+                returnBookDiv.style.display = "block";
+            }
+        }
+
+        function datePassed(date){
+
+            var y= parseInt(date.slice(0,4));
+            var m = parseInt(date.slice(6,7));
+            var d=  parseInt(date.slice(8,10));
+
+            var today = new Date();
+            var d1 = parseInt(String(today.getDate()).padStart(2, '0'));
+            var m1 = parseInt(String(today.getMonth() + 1).padStart(2, '0')); //January is 0!
+            var y1 = parseInt(today.getFullYear());
+
+            console.log(y1+"-"+m1+"-"+d1)
+            console.log(y+"-"+m+"-"+d)
+            if(y < y1)
+            {
+                console.log("years");
+                return true;
+            }
+            else if(m < m1){
+                console.log("months");
+                return true;
+            }
+            else if(d < d1 ){
+                console.log("day");
+                return true;
+            }
+            return false;
+           
+            
+        }
+
+    </script>
 
 <?php include 'templates/footer.html';?>
 

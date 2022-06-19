@@ -40,12 +40,16 @@
 
     <div>
         <div class="books-container">
-            <div class="search-bar">
-                <label for="textSearch">Search: </label>
-                <input type="text" id="textSearch">
-                <button id="search-btn" onclick="search()"><img id="search-icon" src="images/search-icon.png" alt="?"></button>
+            <?php if(isset($_GET['id'])): ?>
+                <?php if($_GET['id']!=1):?>
+                    <div class="search-bar">
+                        <label for="textSearch">Search: </label>
+                        <input type="text" id="textSearch">
+                        <button id="search-btn" onclick="search()"><img id="search-icon" src="images/search-icon.png" alt="?"></button>
 
-            </div>
+                    </div>
+                <?php endif;?>
+            <?php endif;?>
         
             <?php foreach($books as $book): ?>
                 <?php if(isset($_GET['id'])): ?>
@@ -124,7 +128,7 @@
         let booksContainerEl = document.getElementsByClassName("books-container")[0];
         let books = <?php echo json_encode($books);?>;
         
-        console.log(books[0])
+        // console.log(books[0])
         // let isMember = <?php echo isset($_GET['id'])?>
         // if(isMember){
         //     let memberId = <?php echo $_GET['id']?>
@@ -132,10 +136,10 @@
         
         function search()
         {
-            booksContainerEl.innerHTML=""
+            booksContainerEl.innerHTML = ""
             for(let i=0; i< books.length;i++)
             {
-                // if guest
+
                 if((books[i]['title'].toLowerCase()).includes(searchEl.value.toLowerCase()) && books[i]['borrowed_by'] =="0")
                 {
                     
@@ -155,10 +159,8 @@
                     </div >
                     `;
                 }
-                // else
-
-
             }
+                
         }
 
     </script>
