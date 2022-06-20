@@ -1,6 +1,8 @@
 <?php
     include "config/db_connect.php";
 
+    session_start();
+
     if(isset($_POST['delete'])){
 
         $id_to_delete = mysqli_real_escape_string($conn,$_POST['id_to_delete']);

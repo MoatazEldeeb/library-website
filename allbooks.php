@@ -137,6 +137,14 @@
         function search()
         {
             booksContainerEl.innerHTML = ""
+            booksContainerEl.innerHTML +=
+                    `
+                    <div class="search-bar">
+                        <label for="textSearch">Search: </label>
+                        <input type="text" id="textSearch">
+                        <button id="search-btn" onclick="search()"><img id="search-icon" src="images/search-icon.png" alt="?"></button>
+
+                    </div>`;
             for(let i=0; i< books.length;i++)
             {
 
